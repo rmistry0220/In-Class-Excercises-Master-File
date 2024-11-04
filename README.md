@@ -35,3 +35,10 @@ Run the unemployment script:
 python app/unemployment.py
 
 ```
+
+2
+Run the stocks report:
+
+```sh
+python app/stocks.py
+```
