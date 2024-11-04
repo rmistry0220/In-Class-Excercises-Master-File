@@ -1,3 +1,4 @@
 requests
 plotly
 pandas
+python-dotenv
