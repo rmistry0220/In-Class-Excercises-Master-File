@@ -2,3 +2,4 @@ requests
 plotly
 pandas
 python-dotenv
+pytest
