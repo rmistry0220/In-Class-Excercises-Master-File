@@ -37,3 +37,4 @@ def send_mail_with_mailgun(recipient_address=MAILGUN_SENDER_ADDRESS,
         return None
 if __name__=="__main__":
     send_mail_with_mailgun()
+    
