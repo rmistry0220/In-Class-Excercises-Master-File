@@ -34,7 +34,7 @@ Run the unemployment script:
 ```sh
 python app/unemployment.py
 
-python -m unemployment.py
+python -m app.unemployment
 
 ```
 
@@ -44,5 +44,5 @@ Run the stocks report:
 ```sh
 python app/stocks.py
 
-python -m stocks.py
+python -m app.stocks
 ```
