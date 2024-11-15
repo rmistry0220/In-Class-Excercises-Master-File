@@ -1,11 +1,7 @@
-import os
-
 from pandas import read_csv
 from plotly.express import line
-from dotenv import load_dotenv
 
-load_dotenv()
-API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
+from app.alpha_service import API_KEY
 
 def fetch_stocks_csv(symbol):
     request_url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol={symbol}&apikey={API_KEY}&outputsize=full&datatype=csv"
