@@ -1,4 +1,4 @@
-# In-class-notebook-translation-excercise
+# In-Class-Excercises-Master-File
 ## Setup
 
 Create and activate a virtual environment (first time only):
@@ -34,6 +34,8 @@ Run the unemployment script:
 ```sh
 python app/unemployment.py
 
+python -m unemployment.py
+
 ```
 
 2
@@ -41,4 +43,6 @@ Run the stocks report:
 
 ```sh
 python app/stocks.py
+
+python -m stocks.py
 ```
