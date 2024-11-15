@@ -1,5 +1,5 @@
-requests
-plotly
-pandas
 python-dotenv
+requests
+pandas
+plotly
 pytest
