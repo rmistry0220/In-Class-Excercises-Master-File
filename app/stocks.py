@@ -51,12 +51,12 @@ print(f"25TH PERCENTILE: ${recent_df['adjusted_close'].quantile(.25).round(2)}")
 
 from plotly.express import line
 
-<<<<<<< Updated upstream
 fig = line(x=df["timestamp"], y=df["adjusted_close"],
             title=f"Stock Prices ({symbol})",
            labels= {"x": "Date", "y": "Stock Price ($)"})
 fig.show()
-=======
+
+
 from app.email_service import send_mail_with_mailgun
 from app.alpha_service import API_KEY
 
@@ -119,4 +119,3 @@ if __name__=="__main__":
     latest_price=first_row["adjusted_close"]
     send_mail_with_mailgun(subject="Stocks Report",
                            html_content="Lates price for {symbol} is {latest_price}")
->>>>>>> Stashed changes
