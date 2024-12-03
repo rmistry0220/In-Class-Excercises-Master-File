@@ -37,8 +37,6 @@ python app/unemployment.py
 python -m app.unemployment
 
 ```
-
-2
 Run the stocks report:
 
 ```sh
@@ -46,6 +44,8 @@ python app/stocks.py
 
 python -m app.stocks
 ```
+
+##Web App
 
 Run the web app (then view in the browser at http://localhost:5000/):
 
