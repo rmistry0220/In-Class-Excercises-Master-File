@@ -9,21 +9,41 @@
 
     <div id="chart-container" height="700px"></div>
 
+    <!--
+        BOOTSTRAP TABLES
+        https://getbootstrap.com/docs/5.0/content/tables/
+    -->
+    <table class="table table-hover table-responsive caption-top">
+        <caption>Last 30 Days of Closing Prices</caption>
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Close (USD)</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!--
+            JINJA FOR LOOP
+            Display the last 30 days of data
+        -->
+        {% for row in data[:30] %}
+            <tr>
+                <td>{{ row["timestamp"] }}</td>
+                <td>${{ "%.2f" | format(row["adjusted_close"]) }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script type="text/javascript">
 
         console.log("STOCKS DASHBOARD...")
 
         // use data from the router!
-        var symbol = '{{ symbol }}'
-        //var stockData = JSON.parse('{{ data }}')
-        //var stockData = '{{ data }}'
         var stockData = JSON.parse('{{data | tojson}}') // https://stackoverflow.com/a/45132694/670433
         console.log(stockData)
 
-        //var tsd = stockData["Time Series (Daily)"]
-        //var dates = Object.keys(tsd)
-        //var dailyPrices = Object.values(tsd)
         var dates = stockData.map(obj => obj["timestamp"])
         var closingPrices = stockData.map(obj => obj["adjusted_close"])
 
@@ -36,7 +56,7 @@
         }
         var data = [series]
         var layout = {
-            title: "Daily Closing Prices for Stock: " + symbol,
+            title: "Daily Closing Prices for Stock: " + '{{ symbol }}',
             height: 600,
             yaxis: {
                 tickformat: '$' // https://plotly.com/javascript/tick-formatting/
