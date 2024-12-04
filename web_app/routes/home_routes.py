@@ -41,8 +41,3 @@ def hello_world():
     #return message
     return render_template("hello.html", message=message, x=x, y=20)
 
-@home_routes.route("/drinks")
-def drinks_redirect():
-    print("DRINKS REDIRECT...")
-    # Render the drinks.html template via the drink_routes Blueprint
-    return render_template("drinks.html")
