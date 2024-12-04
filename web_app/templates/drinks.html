@@ -1,0 +1,27 @@
+<!-- drinks.html -->
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "drinks" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Non-Alcoholic Drinks</h1>
+    
+    <!-- Responsive Grid of Cards -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        {% for drink in drinks %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{ drink.image }}" class="card-img-top" alt="{{ drink.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ drink.name }}</h5>
+                    <p class="card-text">A refreshing non-alcoholic drink.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary">Details</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
